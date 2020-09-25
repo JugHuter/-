@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Chess
+{
+    class Laba02
+    {
+        public static bool Suitable(string a)
+        {
+            if (a[0] >= 'A' && a[0] <= 'H' && a[1] >= '1' && a[1] <= '8' && a.Length == 2)
+                return true;
+            else
+                return false;
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите начальное местоположение коня.");
+            string koor1 = Console.ReadLine().ToUpper();
+            Console.WriteLine("Введите куда должен переместиться конь");
+            string koor2 = Console.ReadLine().ToUpper();
+            if (Suitable(koor1) && Suitable(koor2))
+            {
+                int a = koor1[0] - koor2[0];
+                int b = koor1[1] - koor2[1];
+
+                if (a * a + b * b == 5)
+                    Console.WriteLine("Конь сходил правильно.");
+                else
+                    Console.WriteLine("Упсс... Это не ход коня");
+
+            }
+            else
+                Console.WriteLine("Что-то пошло не так.");
+
+            Console.ReadKey();
+
+        }
+    }
+}
