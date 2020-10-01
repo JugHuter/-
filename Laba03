@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FunctionX
+
+{
+    class Laba03
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите диапазон значения X");
+
+            Console.WriteLine("Начальное значение");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Конечное значение");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Введите в какую степень нужно возвести X ");
+            double degr = Convert.ToDouble(Console.ReadLine());
+
+            double NumbX = x1;
+            int KolX = 0;
+            for (; x1 <= x2; x1 += 0.01)
+            {
+                KolX += 1;
+            }
+
+            double[] ArrayKolX = new double[KolX];
+            double[] ArrayFunc = new double[KolX];
+            int KolNumbX = 0;
+            int KolNumbFunc = 0;
+
+            double NumbFunc;
+            for (int i = 0; i < KolX; i++)
+            {
+                ArrayKolX[i] = Math.Round(NumbX, 3);
+                NumbX += 0.01;
+                NumbFunc = Math.Round(Math.Pow(ArrayKolX[i], degr), 3);
+                ArrayFunc[i] = NumbFunc;
+
+                if (i > 0)
+                {
+                    if (ArrayKolX[i].ToString().Length > ArrayKolX[i - 1].ToString().Length)
+                    {
+                        KolNumbX = 0;
+                        KolNumbX += ArrayKolX[i].ToString().Length;
+                    }
+                    if (ArrayFunc[i].ToString().Length > ArrayFunc[i - 1].ToString().Length)
+                    {
+                        KolNumbFunc = 0;
+                        KolNumbFunc += ArrayFunc[i].ToString().Length;
+                    }
+                }
+            }
+            for (int i = 0; i < KolX; i++)
+            {
+                Console.WriteLine($"| {ArrayKolX[i]} | {ArrayFunc[i]} |");
+            }
+            Console.ReadKey();
+        }
+    }
+}
