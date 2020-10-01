@@ -21,6 +21,11 @@ namespace FunctionX
 
             Console.WriteLine("Введите в какую степень нужно возвести X ");
             double degr = Convert.ToDouble(Console.ReadLine());
+            for (; x1 > x2;)
+            {
+                Console.WriteLine("Упсс... У вас ошибка со значениями");
+                break;
+            }
 
             double NumbX = x1;
             int KolX = 0;
@@ -32,6 +37,7 @@ namespace FunctionX
             double[] ArrayKolX = new double[KolX];
             double[] ArrayFunc = new double[KolX];
             int KolNumbX = 0;
+
             int KolNumbFunc = 0;
 
             double NumbFunc;
@@ -60,6 +66,7 @@ namespace FunctionX
             {
                 Console.WriteLine($"| {ArrayKolX[i]} | {ArrayFunc[i]} |");
             }
+            
             Console.ReadKey();
         }
     }
