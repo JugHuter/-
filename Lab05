@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab05
+{
+    class Factorial
+    {
+        public static void Main()
+        {
+            Console.Write("Введите число для которого нужно найти факториал : ");
+
+            int num = int.Parse(Console.ReadLine());
+            int fact = 1;
+            for (int i = 1; i <= num; i++)
+            {
+                fact *= i;
+                if (i == num)
+                {
+                    Console.Write("{0}", i);
+                }
+                else
+                {
+                    Console.Write("{0} * ", i);
+                }
+            }
+            Console.Write(" = {0}", fact);
+            Console.ReadKey();
+            
+        }
+    }
+}
