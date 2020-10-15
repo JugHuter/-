@@ -12,8 +12,8 @@ namespace Lab05
         {
             Console.Write("Введите число для которого нужно найти факториал : ");
 
-            int num = int.Parse(Console.ReadLine());
-            int fact = 1;
+            long num = Convert.Toint64(Console.ReadLine());
+            long fact = 1;
             for (int i = 1; i <= num; i++)
             {
                 fact *= i;
